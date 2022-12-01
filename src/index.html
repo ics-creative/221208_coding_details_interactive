@@ -1,52 +1,178 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>デザイン仕様には載らない、気をつけたいHTMLコーディングポイント インタラクション編</title>
-  <link rel="stylesheet" href="./style.scss">
-</head>
-<body>
-<div class="wrapper">
-  <section>
-    <h2>divタグをボタンにするのは避けよう</h2>
-    <div class="exampleWrapper">
-      <div class="example ng">
-        <h3>NG</h3>
-        <div class="sample">
-          <div class="buttonNg">Click</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      デザイン仕様には載らない、気をつけたいHTMLコーディングポイント
+      インタラクション編
+    </title>
+    <link rel="stylesheet" href="./assets/style/style.scss" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <section>
+        <h2>divタグをボタンにするのは避けよう</h2>
+        <div class="exampleWrapper">
+          <div class="example ng">
+            <h3>NG</h3>
+            <div class="sample">
+              <div class="buttonNg">Click</div>
+            </div>
+            <p class="note">
+              フォーカスできず、アクセシビリティ上もインタラクティブな要素として認識されない
+            </p>
+          </div>
+          <div class="example ok">
+            <h3>OK</h3>
+            <div class="sample">
+              <button class="buttonOk">Click</button>
+            </div>
+            <p class="note">
+              フォーカスでき、アクセシビリティ上もインタラクティブな要素として認識される
+            </p>
+          </div>
         </div>
-        <p class="note">フォーカスできず、アクセシビリティ上もインタラクティブな要素として認識されない</p>
-      </div>
-      <div class="example ok">
-        <h3>OK</h3>
-        <div class="sample">
-          <button class="buttonOk">Click</button>
+      </section>
+      <section>
+        <h2>適切なクリッカブルエリアの確保</h2>
+        <div class="exampleWrapper">
+          <div class="example ng">
+            <h3>NG</h3>
+            <div class="sample">
+              <button>
+                <img src="./assets/images/icon_home.svg" alt="" width="28" height="28">
+                <img src="./assets/images/icon_home_fill.svg" alt="" width="28" height="28">
+                <span>Home</span>
+              </button>
+            </div>
+            <p class="note">アイコンの周りピッタリしか反応しない</p>
+          </div>
+          <div class="example ok">
+            <h3>OK</h3>
+            <div class="sample">
+              <button>
+                <img src="./assets/images/icon_home.svg" alt="" width="28" height="28">
+                <img src="./assets/images/icon_home_fill.svg" alt="" width="28" height="28">
+                <span>Home</span>
+              </button>
+            </div>
+            <p class="note">アイコンの周囲も反応する</p>
+          </div>
         </div>
-        <p class="note">フォーカスでき、アクセシビリティ上もインタラクティブな要素として認識される</p>
-      </div>
+      </section>
+      <section>
+        <h2>途切れないリンクエリア</h2>
+        <div class="exampleWrapper">
+          <div class="example ng">
+            <h3>NG</h3>
+            <div class="sample">
+              <a href="#!">外部リンク</a>
+            </div>
+            <p class="note">
+              外部リンクを示すアイコンと文字の間に反応しない部分がある
+            </p>
+          </div>
+          <div class="example ok">
+            <h3>OK</h3>
+            <div class="sample">
+              <a href="#!">外部リンク</a>
+            </div>
+            <p class="note">
+              外部リンクを示すアイコンと文字の間に反応しない部分がない
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>ハンバーガーボタンの領域</h2>
+        <div class="exampleWrapper">
+          <div class="example ng">
+            <h3>NG</h3>
+            <div class="sample">
+              <ul>
+                <li>
+                  <a href="#!">About</a>
+                </li>
+                <li>
+                  <a href="#!">Company</a>
+                </li>
+                <li>
+                  <a href="#!">Works</a>
+                </li>
+                <li>
+                  <a href="#!">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <p class="note">文字部分にしかリンクエリアがない</p>
+          </div>
+          <div class="example ok">
+            <h3>OK</h3>
+            <div class="sample">
+              <ul>
+                <li>
+                  <a href="#!">About</a>
+                </li>
+                <li>
+                  <a href="#!">Company</a>
+                </li>
+                <li>
+                  <a href="#!">Works</a>
+                </li>
+                <li>
+                  <a href="#!">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <p class="note">項目全域にリンクエリアがある</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>インプット要素ラベル要素で紐付ける</h2>
+        <div class="exampleWrapper">
+          <div class="example ng">
+            <h3>NG</h3>
+            <div class="sample">
+              <input type="checkbox" />個人情報保護方針に同意する
+            </div>
+            <p class="note">文字列部分をクリックしてもチェックされない</p>
+          </div>
+          <div class="example ok">
+            <h3>OK</h3>
+            <div class="sample">
+              <label>
+                <input type="checkbox" />個人情報保護方針に同意する
+              </label>
+            </div>
+            <p class="note">文字列部分をクリックしてもチェックされる</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>アイコンのみのボタンには適切なラベルを付与する</h2>
+        <div class="exampleWrapper">
+          <div class="example ng">
+            <h3>NG</h3>
+            <div class="sample">
+              <button>
+                <img src="./assets/images/icon_search.svg" alt="">
+              </button>
+            </div>
+            <p class="note">ボタンに適切なラベルが示されていない</p>
+          </div>
+          <div class="example ok">
+            <h3>OK</h3>
+            <div class="sample">
+              <button aria-label="検索する">
+                <img src="./assets/images/icon_search.svg" alt="">
+              </button>
+            </div>
+            <p class="note">ボタンに適切なラベルが示されている</p>
+          </div>
+        </div>
+      </section>
     </div>
-  </section>
-  <section>
-    <h2>適切なクリッカブルエリアの確保</h2>
-    <div class="exampleWrapper">
-      <div class="example ng">
-        <h3>NG</h3>
-        <div class="sample">
-          <div class="buttonNg">Click</div>
-        </div>
-        <p class="note">フォーカスできず、アクセシビリティ上もインタラクティブな要素として認識されない</p>
-      </div>
-      <div class="example ok">
-        <h3>OK</h3>
-        <div class="sample">
-          <button class="buttonOk">Click</button>
-        </div>
-        <p class="note">フォーカスでき、アクセシビリティ上もインタラクティブな要素として認識される</p>
-      </div>
-    </div>
-  </section>
-</div>
-
-</body>
+  </body>
 </html>

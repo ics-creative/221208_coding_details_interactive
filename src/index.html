@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>デザイン仕様には載らない、気をつけたいHTMLコーディングポイント インタラクション編</title>
+  <link rel="stylesheet" href="./style.scss">
+</head>
+<body>
+<div class="wrapper">
+  <section>
+    <h2>divタグをボタンにするのは避けよう</h2>
+    <div class="exampleWrapper">
+      <div class="example ng">
+        <h3>NG</h3>
+        <div class="sample">
+          <div class="buttonNg">Click</div>
+        </div>
+        <p class="note">フォーカスできず、アクセシビリティ上もインタラクティブな要素として認識されない</p>
+      </div>
+      <div class="example ok">
+        <h3>OK</h3>
+        <div class="sample">
+          <button class="buttonOk">Click</button>
+        </div>
+        <p class="note">フォーカスでき、アクセシビリティ上もインタラクティブな要素として認識される</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2>適切なクリッカブルエリアの確保</h2>
+    <div class="exampleWrapper">
+      <div class="example ng">
+        <h3>NG</h3>
+        <div class="sample">
+          <div class="buttonNg">Click</div>
+        </div>
+        <p class="note">フォーカスできず、アクセシビリティ上もインタラクティブな要素として認識されない</p>
+      </div>
+      <div class="example ok">
+        <h3>OK</h3>
+        <div class="sample">
+          <button class="buttonOk">Click</button>
+        </div>
+        <p class="note">フォーカスでき、アクセシビリティ上もインタラクティブな要素として認識される</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+html{
+  color: #333333;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.wrapper {
+  width: 600px;
+  padding-top: 48px;
+  margin: 0 auto;
+}
+
+section{
+  margin-bottom: 64px;
+}
+
+h2 {
+  &:before {
+    counter-increment: section;
+    content:counter(section)". ";
+  }
+
+  margin-bottom: 16px;
+}
+
+.exampleWrapper{
+  display: flex;
+  align-items: center;
+}
+
+.example{
+  width: 300px;
+  align-items: stretch;
+
+  h3{
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  &.ng{
+    border-right: 1px solid #fff;
+    h3{
+      color: orangered;
+    }
+  }
+  &.ok{
+    h3{
+      color: forestgreen;
+    }
+
+  }
+
+  .sample{
+    padding: 16px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+  }
+  .note{
+    padding: 16px;
+  }
+}
+

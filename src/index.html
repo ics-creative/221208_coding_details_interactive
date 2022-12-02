@@ -41,8 +41,18 @@
             <h3>NG</h3>
             <div class="sample">
               <button>
-                <img src="./assets/images/icon_home.svg" alt="" width="28" height="28">
-                <img src="./assets/images/icon_home_fill.svg" alt="" width="28" height="28">
+                <img
+                  src="./assets/images/icon_home.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                />
+                <img
+                  src="./assets/images/icon_home_fill.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                />
                 <span>Home</span>
               </button>
             </div>
@@ -52,8 +62,18 @@
             <h3>OK</h3>
             <div class="sample">
               <button>
-                <img src="./assets/images/icon_home.svg" alt="" width="28" height="28">
-                <img src="./assets/images/icon_home_fill.svg" alt="" width="28" height="28">
+                <img
+                  src="./assets/images/icon_home.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                />
+                <img
+                  src="./assets/images/icon_home_fill.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                />
                 <span>Home</span>
               </button>
             </div>
@@ -67,7 +87,7 @@
           <div class="example ng">
             <h3>NG</h3>
             <div class="sample">
-              <a href="#!">外部リンク</a>
+              <a href="#">外部リンク</a>
             </div>
             <p class="note">
               外部リンクを示すアイコンと文字の間に反応しない部分がある
@@ -76,7 +96,7 @@
           <div class="example ok">
             <h3>OK</h3>
             <div class="sample">
-              <a href="#!">外部リンク</a>
+              <a href="#">外部リンク</a>
             </div>
             <p class="note">
               外部リンクを示すアイコンと文字の間に反応しない部分がない
@@ -92,16 +112,16 @@
             <div class="sample">
               <ul>
                 <li>
-                  <a href="#!">About</a>
+                  <a href="#">About</a>
                 </li>
                 <li>
-                  <a href="#!">Company</a>
+                  <a href="#">Company</a>
                 </li>
                 <li>
-                  <a href="#!">Works</a>
+                  <a href="#">Works</a>
                 </li>
                 <li>
-                  <a href="#!">Contact</a>
+                  <a href="#">Contact</a>
                 </li>
               </ul>
             </div>
@@ -112,16 +132,16 @@
             <div class="sample">
               <ul>
                 <li>
-                  <a href="#!">About</a>
+                  <a href="#">About</a>
                 </li>
                 <li>
-                  <a href="#!">Company</a>
+                  <a href="#">Company</a>
                 </li>
                 <li>
-                  <a href="#!">Works</a>
+                  <a href="#">Works</a>
                 </li>
                 <li>
-                  <a href="#!">Contact</a>
+                  <a href="#">Contact</a>
                 </li>
               </ul>
             </div>
@@ -151,13 +171,42 @@
         </div>
       </section>
       <section>
+        <h2>インタラクションを重ねない</h2>
+        <div class="exampleWrapper">
+          <div class="example ng">
+            <h3>NG</h3>
+            <div class="sample">
+              <label>
+                <input type="checkbox" /><a href="#">個人情報保護方針</a
+                >に同意する</label
+              >
+            </div>
+            <p class="note">
+              チェックボックスのクリッカブルエリアとリンクのクリッカブルエリアが重なっている
+            </p>
+          </div>
+          <div class="example ok">
+            <h3>OK</h3>
+            <div class="sample">
+              <div>
+                <a href="#">個人情報保護方針</a>
+                <label>
+                  <input type="checkbox" />個人情報保護方針に同意する</label
+                >
+              </div>
+            </div>
+            <p class="note">チェックボックスとリンクが別々になっている</p>
+          </div>
+        </div>
+      </section>
+      <section>
         <h2>アイコンのみのボタンには適切なラベルを付与する</h2>
         <div class="exampleWrapper">
           <div class="example ng">
             <h3>NG</h3>
             <div class="sample">
               <button>
-                <img src="./assets/images/icon_search.svg" alt="">
+                <img src="./assets/images/icon_search.svg" alt="" />
               </button>
             </div>
             <p class="note">ボタンに適切なラベルが示されていない</p>
@@ -165,14 +214,275 @@
           <div class="example ok">
             <h3>OK</h3>
             <div class="sample">
-              <button aria-label="検索する">
-                <img src="./assets/images/icon_search.svg" alt="">
-              </button>
+              <div>
+                <button aria-label="検索する">
+                  <img src="./assets/images/icon_search.svg" alt="" />
+                </button>
+                <button>
+                  <img src="./assets/images/icon_search.svg" alt="" />
+                  <span>検索する</span>
+                </button>
+              </div>
             </div>
             <p class="note">ボタンに適切なラベルが示されている</p>
           </div>
         </div>
       </section>
+      <section>
+        <h2>ボタンにはcursor:pointerをつけよう</h2>
+        <div class="exampleWrapper">
+          <div class="example ng">
+            <h3>NG</h3>
+            <div class="sample">
+              <button class="buttonOk">Click</button>
+            </div>
+            <p class="note">ホバーしてもカーソルにならない</p>
+          </div>
+          <div class="example ok">
+            <h3>OK</h3>
+            <div class="sample">
+              <button class="buttonOk">Click</button>
+            </div>
+            <p class="note">ホバーしたらカーソルになる</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>タッチデバイスでのホバー表現の回避</h2>
+        <div class="exampleWrapper">
+          <div class="example ng">
+            <h3>NG</h3>
+            <div class="sample">
+              <a href="#">ホバーで色が変わるリンク</a>
+            </div>
+            <p class="note">タッチでも色が変わる</p>
+          </div>
+          <div class="example ok">
+            <h3>OK</h3>
+            <div class="sample">
+              <a href="#">ホバーで色が変わるリンク</a>
+            </div>
+            <p class="note">タッチでは色が変わらない</p>
+          </div>
+        </div>
+        <small
+          >※タッチデバイスや開発者ツールのタッチエシミュレーションで試してください</small
+        >
+      </section>
+      <section>
+        <h2>
+          インタラクション要素へのフォーカス時にoutline:noneをつけるのは避けよう
+        </h2>
+        <div class="exampleWrapper">
+          <div class="example ng">
+            <h3>NG</h3>
+            <div class="sample">
+              <button class="buttonOk">Click</button>
+            </div>
+            <p class="note">フォーカスしてもわからない</p>
+          </div>
+          <div class="example ok">
+            <h3>OK</h3>
+            <div class="sample">
+              <button class="buttonOk">Click</button>
+            </div>
+            <p class="note">フォーカスしたらわかる</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>アコーディオンを作るときはsummary・detailsタグが便利</h2>
+        <div class="exampleWrapper">
+          <div class="example ng">
+            <h3>NG</h3>
+            <div class="sample">
+              <div>
+                <div>概要</div>
+                折りたたまれている部分です。
+              </div>
+            </div>
+            <p class="note">
+              特別なケアをしないと、タブフォーカスや読み上げなどが行われない
+            </p>
+          </div>
+          <div class="example ok">
+            <h3>OK</h3>
+            <div class="sample">
+              <details>
+                <summary>概要</summary>
+                折りたたまれている部分です。
+              </details>
+            </div>
+            <p class="note">
+              特別なケアなしに、タブフォーカスや読み上げなどが行われる
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>大きくしたり、移動したりする場合はtransformを使おう</h2>
+        <div class="exampleWrapper">
+          <div class="example ng">
+            <h3>NG</h3>
+            <div class="sample">
+              <button class="buttonOk">Hover</button>
+            </div>
+            <p class="note">
+              他の領域に影響を与え、アニメーションがやや滑らかでない
+            </p>
+          </div>
+          <div class="example ok">
+            <h3>OK</h3>
+            <div class="sample">
+              <button class="buttonOk">Hover</button>
+            </div>
+            <p class="note">他の領域に影響を与えず、アニメーションが滑らか</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>大きくしたり、移動したりする場合はtransformを使おう</h2>
+        <div class="exampleWrapper">
+          <div class="example ng">
+            <h3>NG</h3>
+            <div class="sample">
+              <button class="buttonOk">Hover</button>
+            </div>
+            <p class="note">
+              他の領域に影響を与え、アニメーションがやや滑らかでない
+            </p>
+          </div>
+          <div class="example ok">
+            <h3>OK</h3>
+            <div class="sample">
+              <button class="buttonOk">Hover</button>
+            </div>
+            <p class="note">他の領域に影響を与えず、アニメーションが滑らか</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>境界でのホバーに注意</h2>
+        <div class="exampleWrapper">
+          <div class="example ng">
+            <h3>NG</h3>
+            <div class="sample">
+              <button class="buttonOk">Hover</button>
+            </div>
+            <p class="note">境界付近にホバーするとアニメーションが荒ぶる</p>
+          </div>
+          <div class="example ok">
+            <h3>OK</h3>
+            <div class="sample">
+              <button class="buttonOk">Hover</button>
+            </div>
+            <p class="note">境界付近にホバーしてもアニメーションが荒ぶらない</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>input要素をカスタムするときにdisplay:noneにしない</h2>
+        <div class="exampleWrapper">
+          <div class="example ng">
+            <h3>NG</h3>
+            <div class="sample">
+              <input type="checkbox" />個人情報保護方針に同意する
+            </div>
+            <p class="note">フォーカスできない</p>
+          </div>
+          <div class="example ok">
+            <h3>OK</h3>
+            <div class="sample">
+              <label>
+                <input type="checkbox" />個人情報保護方針に同意する
+              </label>
+            </div>
+            <p class="note">フォーカスできる</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>input要素にautocomplete属性を設置してあげると便利</h2>
+        <div class="exampleWrapper">
+          <div class="example ng">
+            <h3>NG</h3>
+            <div class="sample">
+              <label>お名前 <input type="text" /></label>
+            </div>
+            <p class="note">オートコンプリートできない</p>
+          </div>
+          <div class="example ok">
+            <h3>OK</h3>
+            <div class="sample">
+              <label>お名前 <input type="text" /> </label>
+            </div>
+            <p class="note">オートコンプリートできる</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>input要素のフォントサイズが16px以下だとズームしてしまう</h2>
+        <div class="exampleWrapper">
+          <div class="example ng">
+            <h3>NG</h3>
+            <div class="sample">
+              <label>お名前 <input type="text" /></label>
+            </div>
+            <p class="note">ズームしてしまう</p>
+          </div>
+          <div class="example ok">
+            <h3>OK</h3>
+            <div class="sample">
+              <label>お名前 <input type="text" /> </label>
+            </div>
+            <p class="note">ズームしない</p>
+          </div>
+        </div>
+        <small>※iOS端末でご確認ください</small>
+      </section>
+      <section>
+        <h2>装飾系Videoタグのコントロール非表示</h2>
+        <div class="exampleWrapper">
+          <div class="example ng">
+            <h3>NG</h3>
+            <div class="sample">
+              <video muted playsinline autoplay loop width="256" height="256">
+                <source src="/assets/movies/ikura.mov" type="video/quicktime" />
+                <source src="/assets/movies/ikura.webm" type="video/webm" />
+              </video>
+            </div>
+            <p class="note">キャストやピクチャーインピクチャーができてしまう</p>
+          </div>
+          <div class="example ok">
+            <h3>OK</h3>
+            <div class="sample">
+              <video
+                muted
+                playsinline
+                autoplay
+                loop
+                width="256"
+                height="256"
+                controlslist="nodownload nofullscreen noremoteplayback"
+                x-webkit-airplay="deny"
+                disablepictureinpicture
+              >
+                <source src="/assets/movies/ikura.mov" type="video/quicktime" />
+                <source src="/assets/movies/ikura.webm" type="video/webm" />
+              </video>
+            </div>
+            <p class="note">キャストやピクチャーインピクチャーができない</p>
+          </div>
+        </div>
+      </section>
     </div>
+    <script>
+      // リンクを無効化
+      document.querySelectorAll("a[href='#']").forEach((element) => {
+        element.addEventListener("click", (e) => {
+          e.preventDefault();
+        });
+      });
+    </script>
   </body>
 </html>

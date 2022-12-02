@@ -1,10 +1,11 @@
 html {
-  color: #333333;
+  color: #333;
 }
+
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
   font-family: sans-serif;
 }
 
@@ -20,9 +21,9 @@ section {
 }
 
 h2 {
-  &:before {
-    counter-increment: section;
+  &::before {
     content: counter(section) ". ";
+    counter-increment: section;
   }
 
   margin-bottom: 16px;
@@ -30,21 +31,24 @@ h2 {
 
 .exampleWrapper {
   display: flex;
-  align-items: flex-start;
   column-gap: 24px;
+  align-items: flex-start;
 }
 
 .example {
   width: 348px;
+
   h3 {
-    text-align: center;
     margin-bottom: 8px;
+    text-align: center;
   }
+
   &.ng {
     h3 {
       color: orangered;
     }
   }
+
   &.ok {
     h3 {
       color: forestgreen;
@@ -52,13 +56,14 @@ h2 {
   }
 
   .sample {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
     padding: 16px;
     background-color: #f9f9f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 200px;
   }
+
   .note {
     padding: 16px;
   }

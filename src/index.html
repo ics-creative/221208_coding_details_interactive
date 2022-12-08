@@ -23,8 +23,8 @@
               フォーカスできず、アクセシビリティ上もインタラクティブな要素として認識されない
             </p>
           </div>
-          <div class="example ok">
-            <h3>OK</h3>
+          <div class="example good">
+            <h3>Good</h3>
             <div class="sample">
               <button class="buttonButton">Click</button>
             </div>
@@ -60,8 +60,8 @@
             </div>
             <p class="note">アイコンの周りピッタリしか反応しない</p>
           </div>
-          <div class="example ok">
-            <h3>OK</h3>
+          <div class="example good">
+            <h3>Good</h3>
             <div class="sample">
               <button class="homeButtonGood">
                 <img
@@ -97,8 +97,8 @@
               外部リンクを示すアイコンと文字の間に反応しない部分がある
             </p>
           </div>
-          <div class="example ok">
-            <h3>OK</h3>
+          <div class="example good">
+            <h3>Good</h3>
             <div class="sample">
               <a href="#" class="externalLinkGood">外部リンク</a>
             </div>
@@ -131,8 +131,8 @@
             </div>
             <p class="note">文字部分にしかリンクエリアがない</p>
           </div>
-          <div class="example ok">
-            <h3>OK</h3>
+          <div class="example good">
+            <h3>Good</h3>
             <div class="sample">
               <ul class="menuGood">
                 <li>
@@ -154,8 +154,8 @@
         </div>
       </section>
       <section>
-        <h2>インプット要素ラベル要素で紐付ける</h2>
-        <div class="exampleWrapper">
+        <h2>インプット要素をラベル要素で紐付ける</h2>
+        <div class="exampleWrapper exampleWrapper__3column">
           <div class="example ng">
             <h3>NG</h3>
             <div class="sample">
@@ -164,10 +164,10 @@
                 class="basicCheck"
               />個人情報保護方針に同意する
             </div>
-            <p class="note">文字列部分をクリックしてもチェックされない</p>
+            <p class="note">紐付けられていない。文字列部分をクリックしてもチェックされない</p>
           </div>
-          <div class="example ok">
-            <h3>OK</h3>
+          <div class="example good">
+            <h3>Good</h3>
             <div class="sample">
               <label>
                 <input
@@ -176,7 +176,39 @@
                 />個人情報保護方針に同意する
               </label>
             </div>
-            <p class="note">文字列部分をクリックしてもチェックされる</p>
+            <p class="note">label要素で囲って紐付けられている。文字列部分をクリックしてもチェックされる</p>
+          </div>
+          <div class="example good">
+            <h3>Good</h3>
+            <div class="sample">
+              <div>
+                <input type="checkbox" class="basicCheck" id="agreePrivacy" />
+                <label for="agreePrivacy">個人情報保護方針に同意する</label>
+              </div>
+
+            </div>
+            <p class="note">label要素のfor属性とinput要素のid属性で紐付けられている。文字列部分をクリックしてもチェックされる</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>placeholderをラベル代わりにしない</h2>
+        <div class="exampleWrapper">
+          <div class="example ng">
+            <h3>NG</h3>
+            <div class="sample">
+              <input type="text" placeholder="お名前" />
+            </div>
+            <p class="note">ラベルがない状態</p>
+          </div>
+          <div class="example good">
+            <h3>Good</h3>
+            <div class="sample">
+              <label class=""
+                >お名前 <input type="text" placeholder="山田太郎" />
+              </label>
+            </div>
+            <p class="note">ラベルがあり、入力例が提示されている</p>
           </div>
         </div>
       </section>
@@ -200,8 +232,8 @@
               チェックボックスのクリッカブルエリアとリンクのクリッカブルエリアが重なっている
             </p>
           </div>
-          <div class="example ok">
-            <h3>OK</h3>
+          <div class="example good">
+            <h3>Good</h3>
             <div class="sample">
               <div class="policy good">
                 <a href="#" class="policy_link">個人情報保護方針</a><br />
@@ -219,23 +251,20 @@
       </section>
       <section>
         <h2>アイコンのみのボタンには適切なラベルを付与する</h2>
-        <div class="exampleWrapper">
+        <div class="exampleWrapper exampleWrapper__3column">
           <div class="example ng">
             <h3>NG</h3>
             <div class="sample">
               <button class="iconButton">
-                <img src="./assets/images/icon_search.svg" alt="" />
               </button>
             </div>
             <p class="note">ボタンに適切なラベルが示されていない</p>
           </div>
-          <div class="example ok">
-            <h3>OK</h3>
+          <div class="example good">
+            <h3>Good</h3>
             <div class="sample">
               <div class="exampleWrapper">
-                <button class="iconButton">
-                  <img src="./assets/images/icon_search.svg" alt="" />
-                  <span class="sr-only">検索する</span>
+                <button class="iconButton" aria-label="検索する">
                 </button>
               </div>
             </div>
@@ -243,12 +272,11 @@
               ボタンに適切なラベルが示されている（aria-labelで実装）
             </p>
           </div>
-          <div class="example ok">
-            <h3>OK</h3>
+          <div class="example good">
+            <h3>Good</h3>
             <div class="sample">
               <div class="exampleWrapper">
                 <button class="iconButton">
-                  <img src="./assets/images/icon_search.svg" alt="" />
                   <span class="sr-only">検索する</span>
                 </button>
               </div>
@@ -267,19 +295,19 @@
             <div class="sample">
               <button class="buttonCursorNg">Click</button>
             </div>
-            <p class="note">ホバーしてもカーソルにならない</p>
+            <p class="note">ホバーしてもカーソルが変わらない</p>
           </div>
-          <div class="example ok">
-            <h3>OK</h3>
+          <div class="example good">
+            <h3>Good</h3>
             <div class="sample">
               <button class="buttonCursorGood">Click</button>
             </div>
-            <p class="note">ホバーしたらカーソルになる</p>
+            <p class="note">ホバーしたらカーソルがポインターになる</p>
           </div>
         </div>
       </section>
       <section>
-        <h2>タッチデバイスでのホバー表現の回避</h2>
+        <h2>タッチデバイスでのホバーアニメーションの回避</h2>
         <div class="exampleWrapper">
           <div class="example ng">
             <h3>NG</h3>
@@ -288,8 +316,8 @@
             </div>
             <p class="note">タッチでも色が変わる</p>
           </div>
-          <div class="example ok">
-            <h3>OK</h3>
+          <div class="example good">
+            <h3>Good</h3>
             <div class="sample">
               <a href="#" class="hoverLinkGood">ホバーで色が変わるリンク</a>
             </div>
@@ -310,8 +338,8 @@
             </div>
             <p class="note">フォーカスしてもわからない</p>
           </div>
-          <div class="example ok">
-            <h3>OK</h3>
+          <div class="example good">
+            <h3>Good</h3>
             <div class="sample">
               <button class="buttonFocusGood">Click</button>
             </div>
@@ -334,8 +362,8 @@
               特別なケアをしないと、タブフォーカスや読み上げなどが行われない
             </p>
           </div>
-          <div class="example ok">
-            <h3>OK</h3>
+          <div class="example good">
+            <h3>Good</h3>
             <div class="sample">
               <details class="usefulAccordion accordionWrapper">
                 <summary class="outline">概要</summary>
@@ -363,8 +391,8 @@
               他の領域に影響を与え、アニメーションがやや滑らかでない
             </p>
           </div>
-          <div class="example ok">
-            <h3>OK</h3>
+          <div class="example good">
+            <h3>Good</h3>
             <div class="sample">
               <div>
                 <button class="buttonHoverGood">Hover</button>
@@ -385,8 +413,8 @@
             </div>
             <p class="note">境界付近にホバーするとアニメーションが荒ぶる</p>
           </div>
-          <div class="example ok">
-            <h3>OK</h3>
+          <div class="example good">
+            <h3>Good</h3>
             <div class="sample">
               <button class="buttonHoverBorderGood">
                 <span class="buttonHoverBorderGood_inner">Hover</span>
@@ -409,8 +437,8 @@
             </div>
             <p class="note">フォーカスできない</p>
           </div>
-          <div class="example ok">
-            <h3>OK</h3>
+          <div class="example good">
+            <h3>Good</h3>
             <div class="sample">
               <label class="customCheckboxGood">
                 <input
@@ -445,7 +473,7 @@
             <p class="note">オートコンプリートできない</p>
           </div>
           <div class="example example__long ok" v-else>
-            <h3>OK</h3>
+            <h3>Good</h3>
             <div class="sample autoCompleteFormGood">
               <div>
                 <form class="autoCompleteForm">
@@ -489,8 +517,8 @@
             </div>
             <p class="note">ズームしてしまう</p>
           </div>
-          <div class="example ok">
-            <h3>OK</h3>
+          <div class="example good">
+            <h3>Good</h3>
             <div class="sample">
               <label class="inputZoomGood">お名前 <input type="text" /> </label>
             </div>
@@ -512,8 +540,8 @@
             </div>
             <p class="note">キャストやピクチャーインピクチャーができてしまう</p>
           </div>
-          <div class="example ok">
-            <h3>OK</h3>
+          <div class="example good">
+            <h3>Good</h3>
             <div class="sample">
               <video
                 muted
@@ -535,27 +563,12 @@
         </div>
       </section>
     </div>
-    <script type="module">
+    <script type="module" defer>
       import {
         createApp,
         ref,
         onMounted,
-        nextTick,
-      } from "https://unpkg.com/vue@3.2.45/dist/vue.esm-browser.js";
-
-      // リンクを無効化
-      document.querySelectorAll("a[href='#']").forEach((element) => {
-        element.addEventListener("click", (e) => {
-          e.preventDefault();
-        });
-      });
-
-      // アコーディオンの開閉
-      document
-        .querySelector(".divAccordion .outline")
-        .addEventListener("click", () => {
-          document.querySelector(".divAccordion").classList.toggle("isActive");
-        });
+      } from "https://unpkg.com/vue@3.2.45/dist/vue.esm-browser.prod.js";
 
       // オートコンプリート
       const app = createApp({
@@ -566,6 +579,23 @@
             isShowNgCode.value = !isShowNgCode.value;
           };
 
+          onMounted(() => {
+            // リンクを無効化
+            document.querySelectorAll("a[href='#']").forEach((element) => {
+              element.addEventListener("click", (e) => {
+                e.preventDefault();
+              });
+            });
+
+            // アコーディオンの開閉
+            document
+              .querySelector(".divAccordion .outline")
+              .addEventListener("click", () => {
+                document
+                  .querySelector(".divAccordion")
+                  .classList.toggle("isActive");
+              });
+          });
           return {
             isShowNgCode,
             switchCode,

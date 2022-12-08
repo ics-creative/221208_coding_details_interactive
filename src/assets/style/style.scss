@@ -101,6 +101,9 @@ h2 {
   border-radius: 50px;
   box-shadow: none;
   appearance: none;
+  &:focus-visible{
+    outline-offset: 3px;
+  }
 }
 
 .divButton {

@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      ウェブサイトのユーザビリティやアクセシビリティをあげる、気をつけたいデザイン・コーディングポイント　インタラクション編
+      リンク/ボタン/フォームをより良くするHTML・CSS17選
     </title>
     
     <script type="module" crossorigin src="/221208_coding_details_interactive/assets/main.b843034c.js"></script>
-    <link rel="stylesheet" href="/221208_coding_details_interactive/assets/index.abf20bd2.css">
+    <link rel="stylesheet" href="/221208_coding_details_interactive/assets/index.d5bfd1d8.css">
   </head>
   <body>
     <div class="wrapper" id="app">
@@ -354,10 +354,13 @@
           <div class="example ng">
             <h3>NG</h3>
             <div class="sample">
-              <div class="divAccordion accordionWrapper">
-                <div class="outline">概要</div>
-                <div class="content">折りたたまれている部分です。</div>
+              <div class="accordionLayout">
+                <div class="divAccordion accordionWrapper">
+                  <div class="outline">概要</div>
+                  <div class="content">折りたたまれている部分です。</div>
+                </div>
               </div>
+
             </div>
             <p class="note">
               特別なケアをしないと、タブフォーカスやキーボード操作、読み上げなどが行われない
@@ -366,10 +369,13 @@
           <div class="example good">
             <h3>Good</h3>
             <div class="sample">
-              <details class="usefulAccordion accordionWrapper">
-                <summary class="outline">概要</summary>
-                <div class="content">折りたたまれている部分です。</div>
-              </details>
+              <div class="accordionLayout">
+                <details class="usefulAccordion accordionWrapper">
+                  <summary class="outline">概要</summary>
+                  <div class="content">折りたたまれている部分です。</div>
+                </details>
+              </div>
+
             </div>
             <p class="note">
               特別なケアなしに、タブフォーカスやキーボード操作、読み上げなどが行われる
